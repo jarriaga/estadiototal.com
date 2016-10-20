@@ -3,7 +3,7 @@
 @section('content')
 <div class="container">
     <div class="row">
-        <div class="col-md-8 col-md-offset-2">
+        <div class="col-md-6 col-md-offset-3">
             <div class="panel panel-default">
                 <div class="panel-heading">{{trans('app.Login')}}</div>
                 <div class="panel-body">
@@ -20,11 +20,11 @@
                         {{ csrf_field() }}
 
                         <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
-                            <label for="email" class="col-md-4 control-label">{{trans('app.Email')}}</label>
 
-                            <div class="col-md-6">
-                                <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required autofocus>
-
+                            <div class="col-md-8 col-md-offset-2">
+                                <label for="email" class="form-label control-label">{{trans('app.Email')}}</label>
+                                <input id="email" type="email" placeholder="{{trans('app.EmailPlaceholder')}}"
+                                       class="form-control" name="email" value="{{ old('email') }}" required autofocus>
                                 @if ($errors->has('email'))
                                     <span class="help-block">
                                         <strong>{{ $errors->first('email') }}</strong>
@@ -34,10 +34,11 @@
                         </div>
 
                         <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
-                            <label for="password" class="col-md-4 control-label">{{trans('app.Password')}}</label>
+                            <div class="col-md-8 col-md-offset-2">
+                                <label for="password" class="form-label control-label">{{trans('app.Password')}}</label>
 
-                            <div class="col-md-6">
-                                <input id="password" type="password" class="form-control" name="password" required>
+                                <input id="password" type="password" placeholder="{{trans('app.PasswordPlaceholder')}}"
+                                       class="form-control" name="password" required>
 
                                 @if ($errors->has('password'))
                                     <span class="help-block">
@@ -47,8 +48,8 @@
                             </div>
                         </div>
 
-                        <div class="form-group">
-                            <div class="col-md-6 col-md-offset-4">
+                        <div class="form-group hidden">
+                            <div class="col-md-8 col-md-offset-2">
                                 <div class="checkbox">
                                     <label>
                                         <input type="checkbox" name="remember"> {{trans('app.RememberMe')}}
@@ -58,8 +59,8 @@
                         </div>
 
                         <div class="form-group">
-                            <div class="col-md-8 col-md-offset-4">
-                                <button type="submit" class="btn btn-primary btn-lg">
+                            <div class="col-md-8 col-md-offset-2">
+                                <button type="submit" class="btn btn-create btn-block btn-lg">
                                     {{trans('buttons.Login')}}
                                 </button>
 

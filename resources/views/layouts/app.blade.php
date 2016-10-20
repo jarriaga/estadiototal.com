@@ -20,6 +20,7 @@
 
     <link href="/css/app.css" rel="stylesheet">
     <link href="/css/styles.css" rel="stylesheet" type="text/css">
+    <link href="/css/skins/all.css" rel="stylesheet" type="text/css">
 
 
     <!-- Scripts -->
@@ -45,7 +46,7 @@
 
                 <!-- Branding Image -->
                <!-- <a class="navbar-brand" href="{{ url('/') }}"> -->
-                    <a  class="navbar-brand" href="/"><img src="/images/checalo-250x250.png" style="width:80px;height: auto"></a>
+                    <a  class="navbar-brand" href="/"><img src="/images/Estadiototal-03-ok.png" class="menu-logo"></a>
 
                <!-- </a> -->
             </div>
@@ -93,6 +94,8 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     <!-- Toastr -->
     <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+
+    <script src="/js/icheck.min.js"></script>
 
     @yield('javascript')
 

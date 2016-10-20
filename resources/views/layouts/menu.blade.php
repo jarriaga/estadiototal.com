@@ -1,6 +1,6 @@
 @if (Auth::guest())
     <li><a href="{{ url('/login') }}"> {{trans('app.Login')}}</a></li>
-   <!-- <li><a href="{{ url('/register') }}">{{trans('app.Register')}}</a></li> -->
+   <li><a href="{{ url('/register') }}">{{trans('app.Register')}}</a></li>
 @else
     <li class="dropdown">
         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
@@ -9,8 +9,8 @@
 
         <ul class="dropdown-menu" role="menu">
             <li>
-                <a href="{{ route('getUserProfile',['name'=>str_slug( Auth::user()->name),'id'=> Auth::user()->id])  }}">
-                    {{trans('app.Profile')}}
+                <a href="{{ route('editUserProfile',['name'=>str_slug( Auth::user()->name),'id'=> Auth::user()->id])  }}">
+                    {{trans('app.EditProfile')}}
                 </a>
             </li>
             <li>

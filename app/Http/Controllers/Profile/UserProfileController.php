@@ -32,11 +32,12 @@ class UserProfileController extends Controller
 	 */
 	public function getUserProfile($name, $id, Request $request)
 	{
-		$user = User::findOrFail($id);
+		//$user = User::findOrFail($id);
 		//if the user is login, review is this is the profile's owner
-		$owner = (Auth::check() && Auth::user()->id == $user->id)?true:false;
+		//$owner = (Auth::check() && Auth::user()->id == $user->id)?true:false;
 		//return the view
-		return view('user.profile')->with(['user'=>$user,'owner'=>$owner]);
+		//return view('user.profile')->with(['user'=>$user,'owner'=>$owner]);
+		return redirect('/home');
 	}
 
 	/**
@@ -76,11 +77,7 @@ class UserProfileController extends Controller
 
 		//Find the user if exist before update
 		$user = User::findOrFail(Auth::user()->id);
-		$user->categories()->detach();
-		if($request->input('categories') && is_array($request->input('categories'))){
-			$user->categories()->attach($request->input('categories'));
-		}
-		//dd($request->all());
+
 		try{
 			//If has file
 			if ($request->hasFile('profilePicture') && $request->file('profilePicture')->isValid()) {

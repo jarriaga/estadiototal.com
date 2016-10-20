@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>ChécaloAquí.com</title>
+        <title>{{ config('app.name', 'Laravel') }}</title>
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Raleway:300,500" rel="stylesheet" type="text/css">
@@ -20,83 +20,10 @@
         <!-- Latest compiled and minified JavaScript -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-        <!-- Styles -->
-        <style>
-            html, body {
-                background-color: #fff;
-                color: #636b6f;
-                font-family: 'Raleway', sans-serif;
-                font-weight: 100;
-                margin: 0;
-                /*css for full size background image*/
-                background: url('../images/background-carpintero.jpg') no-repeat center right fixed;
-                -webkit-background-size: cover;
-                -moz-background-size: cover;
-                -o-background-size: cover;
-                background-size: cover;
 
-                height: 100%;
-            }
-
-            .full-height {
-                height: 100vh;
-            }
-
-            .flex-center {
-                align-items: center;
-                display: flex;
-                justify-content: center;
-            }
-
-            .position-ref {
-                position: relative;
-            }
-
-            .top-right {
-                height: 80px;
-                width: 100%;
-                position: absolute;
-                right: 0px;
-                left: 0px;
-                top: 0px;
-                z-index: 99;
-                background-color: rgba(255,255,255,.7);
-            }
-
-            .top-left {
-                position: absolute;
-                left: 20px;
-                top: 0px;
-                z-index: 99;
-            }
-
-
-            .content {
-                z-index: 99;
-                text-align: center;
-            }
-
-            .title {
-                font-size: 64px;
-                color: #fff;
-                margin-bottom: 50px;
-            }
-
-            .links > a {
-                color: #31708f;
-                padding: 0 25px;
-                font-size: 12px;
-                font-weight: 600;
-                letter-spacing: .1rem;
-                text-decoration: none;
-                float: right;
-                margin-top: 30px;
-                text-transform: uppercase;
-            }
-
-        </style>
         <link href="/css/styles.css" rel="stylesheet" type="text/css">
 
+        <link href="/css/welcome.css" rel="stylesheet" type="text/css">
     </head>
     <body >
         <div class="overlay"></div>
@@ -113,7 +40,7 @@
 
                     <!-- Branding Image -->
                     <!-- <a class="navbar-brand" href="{{ url('/') }}"> -->
-                    <a  class="navbar-brand" href="/"><img src="images/checalo-250x250.png" style="width:80px;height: auto"></a>
+                    <a  class="navbar-brand" href="/"><img src="/images/Estadiototal-03-ok.png" class="menu-logo" ></a>
 
                     <!-- </a> -->
                 </div>
@@ -137,30 +64,22 @@
                 <div class="row">
                     <div class="col-md-10 col-md-offset-1">
                         <div class="title m-b-md text-center">
-                            Buscas el mejor precio?<br>
-                            <p class="white-color text-center font14">La comunidad digital que conecta servicios y productos con personas como tú, que buscan el mejor
-                                precio!</p>
+                            Fútbol, nuestra pasión!<br>
+                            <h3 class="white-color text-center">
+                            Controla y Administra tus torneos de futbol
+                            </h3>
                         </div>
 
 
                     </div>
                 </div>
                 <div class="row">
-                        <div class="col-md-4 col-md-offset-1 col-sm-6 text-center">
-                            <a class="btn btn-lg btn-block btn-success btn-landing" href="{{ url('/register') }}">
-                                <br>Quieres cazar las mejores ofertas?<br>
-                                <h2><i class="fa fa-shopping-cart" aria-hidden="true"></i> Click aquí</h2>
+                        <div class="col-md-12 text-center">
+                            <a class="btn btn-lg btn-create " href="{{ url('/register') }}">
+                                <h3>Crear una cuenta</h3>
                             </a>
                         </div>
-                        <div class="col-md-2">
 
-                        </div>
-                        <div class="col-md-4 col-sm-6 text-center">
-                            <a class="btn btn-lg btn-block btn-warning btn-landing">
-                                Quieres anunciar tu negocio o servicios,<br> y llevarlo al siguiente nivel?
-                                <h2><i class="fa fa-rocket" aria-hidden="true"></i> Click aquí</h2>
-                            </a>
-                        </div>
                 </div>
             </div>
 

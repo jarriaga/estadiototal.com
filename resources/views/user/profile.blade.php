@@ -11,8 +11,9 @@
                             <!-- side part -->
                             <div class="col-md-4">
                                 <div class="profile-image-user text-center">
+
                                     @if($user->profileImage)
-                                        <img src="{{asset('storage/profiles/'.$user->profileImage)}}" class="img-rounded" >
+                                        <img src="{{asset('storage/profiles/'.$user->profileImage)}}" class="img-thumbnail" >
                                     @else
                                         <img src="/images/profile/default-user.png"  >
                                     @endif
@@ -20,7 +21,8 @@
                                 @if($owner)
                                 <div class="text-center marginTB5">
                                     <a href="{{ route('editUserProfile',['name'=>str_slug( Auth::user()->name),'id'=> Auth::user()->id])  }}"
-                                       class="btn btn-success btn-sm btn-block">Editar perfil</a>
+                                       class="btn btn-default btn-xs">Editar perfil
+                                    </a>
                                 </div>
                                 @endif
                                 <h3 class="text-center marginTB5">{{ $user->name }}</h3>
@@ -39,19 +41,6 @@
                                       <small>{{trans('app.MessageAboutMe')}}</small>
                                     @endif
                                 </p>
-                                @if($owner)
-                                    <hr>
-                                    <em>Mis intereses:</em>
-                                    <div>
-                                        @if(count($user->categories)>0)
-                                            @foreach($user->categories as $category)
-                                                <span class="label label-info">{{$category->name}}</span>
-                                            @endforeach
-                                        @else
-                                            <small>{{trans('app.MesssageCategories')}}</small>
-                                        @endif
-                                    </div>
-                                @endif
                             </div>
                             <!-- Central Part -->
                             <div class="col-md-8">

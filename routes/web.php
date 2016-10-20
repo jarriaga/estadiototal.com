@@ -11,19 +11,20 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
 
 /** Routes for Logged in users ******************************/
 Route::group(['middleware'=>'auth'],function(){
     Route::get('/profile/{name}/{id}/edit','Profile\\UserProfileController@editUserProfile')->name('editUserProfile');
     Route::post('/profile/user/update','Profile\\UserProfileController@postUpdateProfile')->name('postUpdateProfile');
+    Route::get('/home','HomeController@index')->name('home');
 });
 
 
 
 Route::group(['middleware'=>'guest'],function(){
+    Route::get('/',function(){
+        return view('welcome');
+    });
     Route::get('/auth/facebook/','AuthFacebookController@redirectToProvider')->name('facebookLogin');
     Route::get('/auth/facebook/callback','AuthFacebookController@handleProviderCallback')->name('facebookCallback');
     Route::get('/auth/facebook/email','AuthFacebookController@facebookUpdateEmail')->name('facebookUpdateEmail');
@@ -34,4 +35,3 @@ Route::get('/profile/{name}/{id}','Profile\\UserProfileController@getUserProfile
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index');
